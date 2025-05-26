@@ -6,7 +6,7 @@ function TablaEventos() {
   const [cargando, setCargando] = useState(true);
 
   useEffect(() => {
-    axios.get("http://localhost:3000/eventos")
+    axios.get("https://backend-programacion.onrender.com/eventos")
       .then(res => {
         setEventos(res.data);
         setCargando(false);

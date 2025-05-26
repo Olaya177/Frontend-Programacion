@@ -10,7 +10,7 @@ function Login({ setUsuario }) {
     e.preventDefault();
     setError("");
     try {
-      const res = await axios.post("http://localhost:3000/auth/login", { email, password });
+      const res = await axios.post("https://backend-programacion.onrender.com/auth/login", { email, password });
       localStorage.setItem("token", res.data.token);
       setUsuario(res.data.usuario);
     } catch (err) {

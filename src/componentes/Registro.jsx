@@ -11,7 +11,7 @@ function Registro() {
     e.preventDefault();
     setMensaje("");
     try {
-      await axios.post("http://localhost:3000/auth/register", form);
+      await axios.post("https://backend-programacion.onrender.com/auth/register", form);
       setMensaje("Usuario registrado correctamente. Ahora puedes iniciar sesión.");
       setForm({ nombre: "", email: "", password: "" });
     } catch (err) {

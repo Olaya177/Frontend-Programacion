@@ -8,7 +8,7 @@ function UsuariosAdmin() {
   const token = localStorage.getItem("token");
 
   useEffect(() => {
-    axios.get("http://localhost:3000/usuarios", {
+    axios.get("https://backend-programacion.onrender.com/usuarios", {
       headers: { Authorization: `Bearer ${token}` }
     })
       .then(res => setUsuarios(res.data))
@@ -16,7 +16,7 @@ function UsuariosAdmin() {
   }, []);
 
   const cambiarRol = (id_usuario, rol) => {
-    axios.put(`http://localhost:3000/usuarios/${id_usuario}/rol`, { rol }, {
+    axios.put(`https://backend-programacion.onrender.com/usuarios/${id_usuario}/rol`, { rol }, {
       headers: { Authorization: `Bearer ${token}` }
     })
       .then(() => setMensaje("Rol actualizado"))
@@ -24,7 +24,7 @@ function UsuariosAdmin() {
   };
 
   const eliminarUsuario = (id_usuario) => {
-    axios.delete(`http://localhost:3000/usuarios/${id_usuario}`, {
+    axios.delete(`https://backend-programacion.onrender.com/usuarios/${id_usuario}`, {
       headers: { Authorization: `Bearer ${token}` }
     })
       .then(() => setUsuarios(usuarios.filter(u => u.id_usuario !== id_usuario)))

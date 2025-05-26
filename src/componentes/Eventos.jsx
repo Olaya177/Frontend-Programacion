@@ -24,7 +24,7 @@ function Eventos() {
 
   const cargarEventos = () => {
     axios
-      .get("http://localhost:3000/eventos")
+      .get("https://backend-programacion.onrender.com/eventos")
       .then((res) => setEventos(res.data))
       .catch(() => setMensaje("Error al cargar eventos"));
   };
@@ -53,7 +53,7 @@ function Eventos() {
       // Editar evento
       axios
         .put(
-          `http://localhost:3000/eventos/${editando}`,
+          `https://backend-programacion.onrender.com/eventos/${editando}`,
           form,
           { headers: { Authorization: `Bearer ${token}` } }
         )
@@ -67,7 +67,7 @@ function Eventos() {
       // Crear evento
       axios
         .post(
-          "http://localhost:3000/eventos",
+          "https://backend-programacion.onrender.com/eventos",
           form,
           { headers: { Authorization: `Bearer ${token}` } }
         )
@@ -96,7 +96,7 @@ function Eventos() {
   const handleEliminar = (id_evento) => {
     if (!window.confirm("¿Seguro que deseas eliminar este evento?")) return;
     axios
-      .delete(`http://localhost:3000/eventos/${id_evento}`, {
+      .delete(`https://backend-programacion.onrender.com/eventos/${id_evento}`, {
         headers: { Authorization: `Bearer ${token}` },
       })
       .then(() => {
